@@ -29,7 +29,7 @@ public class DeTest {
 	public void deInferieurTest(){
 		de1.setValeurCourrante(4);
 		de2.setValeurCourrante(5);
-		assertTrue(de1.compareTo(de1)==-1);
+		assertTrue(de1.compareTo(de2)==-1);
 	}
 
 	@Test

@@ -39,7 +39,10 @@ public class De implements Comparable<De>{
     @Override
     public int compareTo(De d) {
         int res = 0;
-        
+        if(d == null)
+        {
+            throw new IllegalArgumentException();
+        }
         if(this.valeurCourrante < d.valeurCourrante){
             res = -1;
         }
