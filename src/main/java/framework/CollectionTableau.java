@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 
+import org.apache.commons.math3.analysis.integration.IterativeLegendreGaussIntegrator;
+
 @SuppressWarnings("unchecked")
 public class CollectionTableau<E> implements Collection<E> {
 
@@ -48,7 +50,7 @@ public class CollectionTableau<E> implements Collection<E> {
     @Override
     public Iterator<E> iterator() {
         // TODO Auto-generated method stub
-        return new Iterateur();
+        return new IterateurCollectionTableau<E>(this);
     }
 
     @Override

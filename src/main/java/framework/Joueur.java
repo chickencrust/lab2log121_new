@@ -21,6 +21,7 @@ public class Joueur implements Comparable<Joueur>{
     }
 
     public void roulerDes(){
+        
         while(iterateur.hasNext()){
             iterateur.next().rouler();
         }
