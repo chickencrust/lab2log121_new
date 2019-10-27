@@ -35,9 +35,11 @@ public class CollectionTableau<E> implements Collection<E> {
     public int indexOf(Object o ){
         int index = -1;
         for (int i = 0; i < tab.length; i ++) {
-            if(tab[i].equals(o)){
-                index = i;
-                break;
+            if(tab[i]!= null){
+                if(tab[i].equals(o)){
+                    index = i;
+                    break;
+                }
             }
         }
         return index;
@@ -63,10 +65,10 @@ public class CollectionTableau<E> implements Collection<E> {
 
     @Override
     public boolean add(E e) {
-        
+
         if(compteElement + 1 > tab.length)
            tab = Arrays.copyOf(tab, tab.length + 10);
-        tab[++compteElement] = e;
+        tab[compteElement++] = e;
         return true;
     }
 
@@ -75,9 +77,11 @@ public class CollectionTableau<E> implements Collection<E> {
         int index = indexOf(o);
         //On d‚cale tout les ‚l‚ments apr?s celui qu'on veut enlever vers la gauche
         if (index != -1){
-            compteElement--;
-            for(int i = index; i < tab.length; i++)
+            if(index != compteElement - 1){
+                for(int i = index; i < tab.length - 1; i++)
                 tab[i] = tab[i+1];
+            }
+            compteElement--;
         }
 
         return true;
@@ -130,6 +134,10 @@ public class CollectionTableau<E> implements Collection<E> {
                 return tab[position++];
             else
                 return null;
+        }
+
+        public void goToFirst(){
+            position = 0;
         }
  
         @Override

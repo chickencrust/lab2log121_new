@@ -29,6 +29,12 @@ public class De implements Comparable<De>{
         this.r = new Random();
     }
     
+    public De(int nbCote, int valeurCourrante){
+        this.nbCote = nbCote;
+        this.valeurCourrante = valeurCourrante;
+        this.r = new Random();
+    }
+
     /**
      * @return nouvelle valeur du top du d‚
      */
