@@ -5,56 +5,56 @@ import org.junit.*;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
-import framework.CollectionTableau;
+import framework.Liste;
 import framework.De;
 import java.util.Iterator;
 
-public class CollectionTableauTest {
+public class ListeTest {
 
-	private CollectionTableau<De> ct;
+	private Liste<De> listeDe;
     private De deAtrouver;
     //TODO: Add null tests
 
 	@Before
 	public void faireAvant(){
-        ct = new CollectionTableau<De>();
+        listeDe = new Liste<De>();
         deAtrouver = new De(6,1);
         
         //Size = 6
         //DeATrouver index = 1
-        ct.add(deAtrouver);
-        ct.add(new De(6,2));
-        ct.add(new De(6,3));
-        ct.add(new De(6,4));
-        ct.add(new De(6,5));
-        ct.add(new De(6,6));
+        listeDe.add(deAtrouver);
+        listeDe.add(new De(6,2));
+        listeDe.add(new De(6,3));
+        listeDe.add(new De(6,4));
+        listeDe.add(new De(6,5));
+        listeDe.add(new De(6,6));
 
 	}
 
 	@Test
 	public void sizeTest(){
-		assertTrue(ct.size()==6);
+		assertTrue(listeDe.size()==6);
 	}
 
     @Test
 	public void isEmptyTest(){
-		assertTrue(ct.isEmpty()==false);
+		assertTrue(listeDe.isEmpty()==false);
     }
     
     @Test
 	public void indexOfTest(){
-		assertTrue(ct.indexOf(deAtrouver) == 0);
+		assertTrue(listeDe.indexOf(deAtrouver) == 0);
     }
 
     @Test
 	public void containsTest(){
-        assertTrue(ct.contains(deAtrouver) == true);
+        assertTrue(listeDe.contains(deAtrouver) == true);
     }
 
     @Test
 	public void iteratorTest(){
 
-        Iterator<De> ite = ct.iterator();
+        Iterator<De> ite = listeDe.iterator();
         
         int[] tab = new int[6];
         int[] tabCompare = {1,2,3,4,5,6};
@@ -73,11 +73,11 @@ public class CollectionTableauTest {
 
     @Test
 	public void removeTest(){
-        ct.remove(deAtrouver);
-        int size= ct.size();
-        boolean contains = ct.contains(deAtrouver);
+        listeDe.remove(deAtrouver);
+        int size= listeDe.size();
+        boolean contains = listeDe.contains(deAtrouver);
 
-        assertTrue(ct.contains(deAtrouver) == false && ct.size() == 5);
+        assertTrue(listeDe.contains(deAtrouver) == false && listeDe.size() == 5);
     }
 
 

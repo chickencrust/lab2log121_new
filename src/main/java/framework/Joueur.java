@@ -9,6 +9,9 @@ public class Joueur implements Comparable<Joueur>{
     private Iterator<De> iterateur;
 
 
+    public Joueur(IterateurListe<De> iterateur){
+        this.iterateur = iterateur;
+    }
 
     public int getPoints(){
         return nbPoints;
@@ -36,7 +39,11 @@ public class Joueur implements Comparable<Joueur>{
     public int compareTo(Joueur j) {
         // TODO Auto-generated method stub
         int res = 0;
-        
+
+        if(j == null)
+        {
+            throw new IllegalArgumentException();
+        }
         if(this.nbPoints < j.nbPoints){
             res = -1;
         }

@@ -2,12 +2,12 @@ package framework;
 import java.util.Iterator;
 
 
-public class IterateurCollectionTableau<E> implements Iterator<E> { 
+public class IterateurListe<E> implements Iterator<E> { 
     private int position;
-    private CollectionTableau<E> liste;
+    private Liste<E> liste;
     
     // initialize pointer to head of the list for iteration 
-    public IterateurCollectionTableau(CollectionTableau<E> liste)     { 
+    public IterateurListe(Liste<E> liste)     { 
         this.liste = liste;
         position = 0;
     } 

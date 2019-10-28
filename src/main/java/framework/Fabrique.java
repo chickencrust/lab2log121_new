@@ -1,6 +1,7 @@
 package framework;
 
 public abstract class Fabrique{
+   
    public void initialiserJeu(){
         initialiserRegles();
         creerDes();

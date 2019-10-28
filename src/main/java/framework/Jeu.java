@@ -2,8 +2,8 @@ package framework;
 
 public class Jeu {
 
-    private CollectionTableau<Joueur> cj;
-    private CollectionTableau<De> cd;
+    private Liste<Joueur> cj;
+    private Liste<De> cd;
     
     private IStrategie strat;
 
@@ -12,11 +12,11 @@ public class Jeu {
     private int compteTour;
 
     public Jeu(){
-        cj = new CollectionTableau<Joueur>();
-        cd = new CollectionTableau<De>();
+        cj = new Liste<Joueur>();
+        cd = new Liste<De>();
     }
 
-    public CollectionTableau<Joueur> calculerLeVainqueur(){
+    public Liste<Joueur> calculerLeVainqueur(){
         return strat.calculerLeVainqueur(this);
     };
     public boolean calculerScoreTour(){

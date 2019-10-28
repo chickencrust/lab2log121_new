@@ -4,16 +4,15 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 
-import org.apache.commons.math3.analysis.integration.IterativeLegendreGaussIntegrator;
 
 @SuppressWarnings("unchecked")
-public class CollectionTableau<E> implements Collection<E> {
+public class Liste<E> implements Collection<E> {
 
     E[] tab;
     int compteElement = 0;
 
 
-    public CollectionTableau(){
+    public Liste(){
         tab = (E[])new Object[10];
     }
 
@@ -50,7 +49,7 @@ public class CollectionTableau<E> implements Collection<E> {
     @Override
     public Iterator<E> iterator() {
         // TODO Auto-generated method stub
-        return new IterateurCollectionTableau<E>(this);
+        return new IterateurListe<E>(this);
     }
 
     @Override
